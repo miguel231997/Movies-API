@@ -6,8 +6,9 @@ function getQueryParam() {
 }
 
 function updateYearDisplay(val) {
-  document.getElementById('yearDisplay').textContent = val;
-}
+    document.getElementById('yearDisplay').textContent = val;
+    searchMovies(); // 
+  }
 
 function handleSearch() {
     const loader = document.querySelector('.loader');

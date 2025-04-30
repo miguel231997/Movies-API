@@ -6,7 +6,6 @@
     <title>MigMovies</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://kit.fontawesome.com/b8894f06fa.js" crossorigin="anonymous"></script>
-    <script src="find.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
@@ -24,14 +23,16 @@
             <h3>Find your next watch with MigMovies</h3>
             <div class="search__container">
                 <input type="text" id="searchInput" placeholder="Search by Title, Year or Keyword" />
-                <button onclick="">
-                    <i class="fas fa-search"></i>Search
-                </button>
+                <button onclick="handleSearch()">
+                    <i class="fas fa-search"></i>
+                    Search
+                  </button>
             </div>
         </section>
         <div class="loader hidden">
             <i class="fas fa-spinner books__loading--spinner"></i>
         </div>
     </main>
+    <script src="index.js" defer></script>
 </body>
 </html>

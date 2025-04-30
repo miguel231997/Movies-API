@@ -38,16 +38,16 @@ async function searchMovies() {
 
     if (data.Response === 'True') {
         resultsContainer.innerHTML = data.Search
-          .slice(0, 6) // ✅ Only take the first 6 results
-          .map(movie => `
-            <div class="movie">
-              <img src="${movie.Poster !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/150'}" alt="${movie.Title}" />
-              <div class="movie__info">
+        .slice(0, 6)
+        .map(movie => `
+            <div class="movie" onclick="goToMovie('${movie.imdbID}')">
+            <img src="${movie.Poster !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/150'}" alt="${movie.Title}" />
+            <div class="movie__info">
                 <h4>${movie.Title}</h4>
                 <p>Year: ${movie.Year}</p>
-              </div>
-            </div>`
-          ).join('');
+            </div>
+            </div>
+        `).join('');
       } else {
         resultsContainer.innerHTML = '<p>No results found.</p>';
       }
@@ -61,3 +61,8 @@ window.onload = () => {
     searchMovies();
   }
 };
+
+function goToMovie(imdbID) {
+    localStorage.setItem("movieId", imdbID);
+    window.location.href = "movie.html";
+  }

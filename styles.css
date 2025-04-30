@@ -17,8 +17,16 @@ body {
   padding: 20px 40px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   display: flex;
+}
+
+.nav__container {
+    width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
 }
 
 .logo {

@@ -7,7 +7,11 @@ function getQueryParam() {
 
 function updateYearDisplay(val) {
     document.getElementById('yearDisplay').textContent = val;
-    searchMovies(); // 
+  
+    const query = document.getElementById('searchBox').value.trim();
+    if (query) {
+      searchMovies();
+    }
   }
 
 function handleSearch() {

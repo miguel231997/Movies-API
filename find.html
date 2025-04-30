@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find a Movie</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/b8894f06fa.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav__container">
+      <div class="logo">MigMovies</div>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="find.html">Find a Movie</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="find">
+    <h3>Browse our Movies</h3>
+    <div class="search__container">
+      <input type="text" id="searchBox" placeholder="Search by Title, Year or Keyword" />
+      <button onclick="searchMovies()"><i class="fas fa-search"></i> Search</button>
+    </div>
+
+    <div class="filters">
+      <div>Search results:</div>
+      <div>
+        Year range:
+        <input type="range" id="yearRange" min="1950" max="2025" value="2025" oninput="updateYearDisplay(this.value)" />
+        <span id="yearDisplay">2025</span>
+      </div>
+    </div>
+
+    <div class="loader hidden">
+      <i class="fas fa-spinner books__loading--spinner"></i>
+    </div>
+
+    <div class="results" id="movieResults"></div>
+  </main>
+
+  <script src="find.js"></script>
+</body>
+</html>
